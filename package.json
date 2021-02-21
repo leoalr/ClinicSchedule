@@ -1,0 +1,35 @@
+{
+  "name": "clinicscheduleapi",
+  "version": "1.0.0",
+  "description": "Repository to develop a challenge to a hiring process",
+  "main": "src/server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon",
+    "build": "rimraf ./build && tsc",
+    "start": "npm run build && node build/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leoalr/ClinicScheduleApi.git"
+  },
+  "author": "Leonardo A. Ramos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leoalr/ClinicScheduleApi/issues"
+  },
+  "homepage": "https://github.com/leoalr/ClinicScheduleApi#readme",
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.31",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.5"
+  },
+  "dependencies": {}
+}

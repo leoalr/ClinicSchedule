@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "c286730c-4905-4bdf-8a4e-9e9303f39e1d",
+		"name": "ClinicScheduleAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateSchedule",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"scheduleDate\": \"22-03-2021\",\r\n    \"intervals\": [{\r\n        \"start\":\"10:00\",\r\n        \"end\":\"12:00\"\r\n    }]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/schedule",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"schedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSchedule",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/schedule",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"schedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateSchedule",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"scheduleFrequency\": \"Once\",\r\n    \"scheduleDate\": \"22-03-2021\",\r\n    \"intervals\": [{\r\n        \"start\":\"14:00\",\r\n        \"end\":\"16:00\"\r\n    }]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/schedule/22-03-2021",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"schedule",
+						"22-03-2021"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteSchedule",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/schedule/22-03-2021",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"schedule",
+						"22-03-2021"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

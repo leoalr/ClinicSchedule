@@ -1,7 +1,6 @@
 import express, {Router} from 'express';
 import Controller from '../interfaces/controller.interface';
 import ScheduleList from './schedule-list';
-import ScheduleFrequency from './schedule-frequency.enum';
 import Schedule from './schedule';
 import moment from 'moment';
 import ScheduleResponse from './schedule-response';
@@ -10,17 +9,6 @@ class ScheduleController implements Controller {
     public path: string = '/schedule';
     public router: express.Router = Router();
     private scheduleList: ScheduleList;
-
-    private schedule = [
-        {
-            "date": "26-02-2021",
-            "intervals": "10:00"
-        },
-        {
-            "date": "27-02-2021",
-            "intervals": "10:00"
-        }
-    ];
 
     constructor() {
         this.initializeRoutes();
@@ -44,10 +32,6 @@ class ScheduleController implements Controller {
     }
     
     createASchedule = (request: express.Request, response: express.Response) => {
-        // let validationErrorMessages = this.validateRequest(request.body);
-        // if (validationErrorMessages && validationErrorMessages.some(item => item)){
-        //     response.json({success: false, errorMessages: validationErrorMessages, data: null});
-        // }
         let {scheduleFrequency, scheduleDate, intervals} = request.body;
 
         let schedule = new Schedule(moment(scheduleDate, 'DD-MM-YYYY').toDate(), intervals);

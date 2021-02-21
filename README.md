@@ -1,4 +1,4 @@
-# ClinicSchedule
+# ClinicScheduleApi
 Repository to develop a challenge to a hiring process
 
 Olá! Este é um projeto realizado para estudo de node e para atender a um desafio de um processo seletivo.

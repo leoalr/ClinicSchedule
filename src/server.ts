@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import Routes from './routes/routes';
 import Controller from './interfaces/controller.interface';
 import ScheduleController from './schedule/schedule.controller';
+import ScheduleRuleController from './schedule-rule/schedule-rule.controller';
 
 const app = express();
 app.use(bodyParser.json());
@@ -15,7 +16,8 @@ app.get('/', (req, res) => {
 });
 
 const controllers: Controller[] = [
-  new ScheduleController()
+  new ScheduleController(),
+  new ScheduleRuleController(),
 ];
 
 const routes = new Routes(app, controllers);

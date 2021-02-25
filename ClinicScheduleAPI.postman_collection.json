@@ -6,13 +6,59 @@
 	},
 	"item": [
 		{
-			"name": "CreateSchedule",
+			"name": "GetScheduleAvailabilityByPeriod",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/schedule?searchingPeriodStart=31-03-2021&searchingPeriodEnd=03-04-2021",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"schedule"
+					],
+					"query": [
+						{
+							"key": "searchingPeriodStart",
+							"value": "31-03-2021"
+						},
+						{
+							"key": "searchingPeriodEnd",
+							"value": "03-04-2021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllScheduleRules",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/schedulerule",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"schedulerule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateSpecificDateScheduleRule",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"scheduleDate\": \"22-03-2021\",\r\n    \"intervals\": [{\r\n        \"start\":\"10:00\",\r\n        \"end\":\"12:00\"\r\n    }]\r\n}",
+					"raw": "{\r\n    \"ruleType\": \"SpecificDate\",\r\n    \"scheduleDate\": \"03-04-2021\",\r\n    \"intervals\": [\r\n        {\r\n            \"start\": \"15:05\",\r\n            \"end\": \"16:45\"\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,44 +66,26 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/schedule",
+					"raw": "localhost:3000/schedulerule",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"schedule"
+						"schedulerule"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "GetSchedule",
+			"name": "CreateDailyScheduleRule",
 			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:3000/schedule",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"schedule"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "UpdateSchedule",
-			"request": {
-				"method": "PUT",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"scheduleFrequency\": \"Once\",\r\n    \"scheduleDate\": \"22-03-2021\",\r\n    \"intervals\": [{\r\n        \"start\":\"14:00\",\r\n        \"end\":\"16:00\"\r\n    }]\r\n}",
+					"raw": "{\r\n    \"ruleType\": \"Daily\",\r\n    \"intervals\": [\r\n        {\r\n            \"start\": \"10:00\",\r\n            \"end\": \"12:00\"\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -65,42 +93,59 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3000/schedule/22-03-2021",
+					"raw": "localhost:3000/schedulerule",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"schedule",
-						"22-03-2021"
+						"schedulerule"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "DeleteSchedule",
+			"name": "CreateWeeklyScheduleRule",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ruleType\": \"Weekly\",\r\n    \"daysOfWeek\": [6],\r\n    \"intervals\": [\r\n        {\r\n            \"start\": \"10:00\",\r\n            \"end\": \"14:00\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/schedulerule",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"schedulerule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteScheduleRule",
 			"request": {
 				"method": "DELETE",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "localhost:3000/schedule/22-03-2021",
+					"raw": "localhost:3000/schedulerule/Daily",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"schedule",
-						"22-03-2021"
+						"schedulerule",
+						"Daily"
 					]
 				}
 			},

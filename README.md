@@ -19,5 +19,4 @@ Após executar estes dois comandos a API deverá estar disponível no endereço 
 Para testar os serviços disponíveis da API recomendo utilizar Postman e nele importar a collection
 que também se encontra neste mesmo diretório onde se encontra este arquivo.
 
-As validações não foram implementadas, portanto erros podem ocorrer. =0
 Obrigado! =)
